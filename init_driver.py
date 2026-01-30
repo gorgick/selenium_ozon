@@ -17,3 +17,7 @@ def init_webdriver():
             fix_hairline=True,
             )
     return driver
+
+
+if __name__ == "__main__":
+    driver = init_webdriver()
