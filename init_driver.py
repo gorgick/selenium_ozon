@@ -19,5 +19,20 @@ def init_webdriver():
     return driver
 
 
+def scrolldown(driver, deep):
+    for _ in range(deep):
+        driver.execute_script('window.scrollBy(0, 500)')
+        time.sleep(0.1)
+
+
+def get_mainpage_cards(driver, url):
+    driver.get(url)
+    scrolldown(driver, 50)
+
+
 if __name__ == "__main__":
     driver = init_webdriver()
+    get_mainpage_cards(driver, "https://ozon.by")
+    time.sleep(25)
+    driver.quit()
+
